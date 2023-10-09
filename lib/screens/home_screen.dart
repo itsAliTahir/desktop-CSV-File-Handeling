@@ -1,8 +1,9 @@
 import 'package:provider/provider.dart';
-
 import '../dummy_data.dart';
 import '../global_constants_and_variables.dart';
 import 'package:flutter/material.dart';
+
+import 'choose_csv_file.dart';
 
 class MyHomeScreen extends StatefulWidget {
   const MyHomeScreen({super.key});
@@ -104,7 +105,11 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
           Center(
             child: ElevatedButton(
               child: Text("Import"),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => MyCSVFilePicker(),
+                ));
+              },
             ),
           ),
         ]),
